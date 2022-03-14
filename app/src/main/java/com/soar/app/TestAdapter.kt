@@ -16,29 +16,22 @@ import kotlin.random.Random
  *※ Package : com.soar.app
  *----------------------------------------------------
  */
-class TestAdapter:BaseQuickAdapter<String , BaseViewHolder>(R.layout.item_test) {
-    var colors = arrayListOf<Int>()
-    init {
-        colors.add(Color.BLACK)
-        colors.add(Color.YELLOW)
-        colors.add(Color.GRAY)
-        colors.add(Color.GREEN)
-        colors.add(Color.RED)
-        colors.add(Color.BLUE)
-        colors.add(Color.CYAN)
-        colors.add(Color.DKGRAY)
-        colors.add(Color.MAGENTA)
-    }
-    var randow = Random.Default
+class TestAdapter:BaseQuickAdapter<ItemData , BaseViewHolder>(R.layout.item_test) {
 
     override fun getItemViewType(position: Int): Int {
         return super.getItemViewType(position)
     }
 
-    override fun convert(holder: BaseViewHolder, item: String) {
-        holder.setText(R.id.itemText , item)
 
-        Log.d("soar" , "===${colors.size}")
-        holder.setBackgroundColor(R.id.itemText ,colors[randow.nextInt(9)])
+    override fun convert(holder: BaseViewHolder, item: ItemData) {
+        holder.setText(R.id.itemText , item.str)
+        Log.e("soar" , "convert  ${holder.adapterPosition}   ${item.transX}   ${item.isVisiableImage}")
+        holder.itemView.post{
+            if(item.transX != 0){
+                holder.itemView.translationX = item.transX.toFloat()
+            }
+        }
+        holder.setGone(R.id.image , !item.isVisiableImage)
+
     }
 }

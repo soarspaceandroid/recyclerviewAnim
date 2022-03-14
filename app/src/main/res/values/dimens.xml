@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="width">100dp</dimen>
+
+    <dimen name="width_ext">280dp</dimen>
+
+    <dimen name="height">140dp</dimen>
 </resources>

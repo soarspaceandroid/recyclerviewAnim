@@ -12,21 +12,41 @@
         android:orientation="horizontal">
 
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/test"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:text="测试"
-            android:gravity="center"
-            android:background="#ff9889"
-            />
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:text="测试键入"
+                android:gravity="center"
+                android:background="#ff9889"
+                />
+
+            <TextView
+                android:id="@+id/testFirst"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:text="测试缩放"
+                android:gravity="center"
+                android:background="#ff9889"
+                />
+
+
+
+        </LinearLayout>
+
+
 
         <View
             android:id="@+id/tem"
-            android:layout_width="@dimen/width"
-            android:layout_height="100dp"
-            android:background="@color/black"
+            android:layout_width="@dimen/width_ext"
+            android:layout_height="300dp"
+            android:background="#ff44a7"
             ></View>
 
 
@@ -38,7 +58,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
